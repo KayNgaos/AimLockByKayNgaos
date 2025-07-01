@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>KayNgao's Menu - Free Fire Style</title>
+  <style>
+    body {
+      margin: 0;
+      background: black;
+      color: gold;
+      font-family: 'Arial Black', sans-serif;
+      overflow: hidden;
+    }
+
+    .menu {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      width: 280px;
+      background: rgba(0, 0, 0, 0.85);
+      padding: 15px;
+      border: 2px solid red;
+      z-index: 9999;
+    }
+
+    .menu h2 {
+      margin-top: 0;
+      color: red;
+      font-size: 20px;
+    }
+
+    .menu label {
+      display: block;
+      margin: 6px 0;
+      font-size: 14px;
+    }
+
+    .menu select, .menu input[type="range"] {
+      width: 100%;
+      margin-top: 4px;
+    }
+
+    .menu input[type="checkbox"] {
+      transform: scale(1.2);
+      margin-right: 6px;
+    }
+
+    .crosshair {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background: red;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+
+    .target {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      background: lime;
+      border: 2px solid transparent;
+      border-radius: 50%;
+    }
+
+    .radar {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      width: 150px;
+      height: 150px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid red;
+    }
+
+    .radar .dot {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      background: red;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="menu" id="menu">
+    <h2>KayNgao's Menu</h2>
+    <label><input type="checkbox" id="aimlock"> AimLock</label>
+    <label><input type="checkbox" id="esp"> ESP</label>
+    <label><input type="checkbox" id="speedhack"> SpeedHack</label>
+    <label><input type="checkbox" id="triggerbot"> TriggerBot</label>
+    <label><input type="checkbox" id="autoheadshot"> Auto Headshot</label>
+    <label><input type="checkbox" id="aimbot"> Aimbot Đa Mục Tiêu</label>
+
+    <label>
+      Aim POV: <span id="fovValue">150</span>
+      <input type="range" id="aimFov" min="1" max="500" value="150">
+    </label>
+
+    <label>🎯 Crosshair Style:
+      <select id="crosshairType">
+        <option value="dot">Dot</option>
+        <option value="plus">+</option>
+        <option value="x">X</option>
+        <option value="sniper">Sniper</option>
+      </select>
+    </label>
+
+    <label>🔫 Skin Changer:
+      <select id="skinSelect">
+        <option>AK-47 Rồng Xanh LV7</option>
+        <option>M1887 Vũ Trụ Hủy Diệt LV7</option>
+        <option>Scar Cá Mập</option>
+        <option>MP40 Mãng Xà LV7</option>
+        <option>MP5 Thiên Thần Bạch Kim</option>
+      </select>
+    </label>
+  </div>
+
+  <div class="crosshair" id="crosshair"></div>
+  <div class="radar" id="radar"></div>
